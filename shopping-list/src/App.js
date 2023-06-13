@@ -23,8 +23,6 @@ function App() {
     }
   };
 
-  console.log(rotation);
-
   return (
     <div className="App">
       <div className="top">
