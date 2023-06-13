@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+
+$jetbrains: "JetBrains Mono", monospace;
+$green: #3cc88d;
+$blue: #4ab2de;
+
+* {
+  font-family: $jetbrains;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: radial-gradient(circle, #808080 10%, transparent 11%),
+    radial-gradient(circle at bottom left, #808080 5%, transparent 6%),
+    radial-gradient(circle at bottom right, #808080 5%, transparent 6%),
+    radial-gradient(circle at top left, #808080 5%, transparent 6%),
+    radial-gradient(circle at top right, #808080 5%, transparent 6%);
+  background-size: 2em 2em;
+  background-color: #868686;
+  opacity: 1;
+}
+
+/*Heading css*/
+
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .title {
+    width: 320px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+
+    h1 {
+      font-size: 30px;
+      text-transform: uppercase;
+    }
+
+    .green-circle {
+      width: 60px;
+      height: 60px;
+      background-color: $green;
+      border-radius: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+/*Add Item css*/
+.inputs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  button {
+    border-radius: 7px;
+    border: none;
+    background-color: $blue;
+    width: 80px;
+    padding: 5px 0;
+  }
+
+  .input {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    margin-bottom: 10px;
+
+    label {
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      border-radius: 7px;
+      border: none;
+    }
+  }
+
+  &:after {
+    content: "";
+    margin: 10px 0;
+    width: 85%;
+    border-bottom: 1px solid black;
+    bottom: 0;
+  }
+}

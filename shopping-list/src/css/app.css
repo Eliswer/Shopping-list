@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap");
+* {
+  font-family: "JetBrains Mono", monospace;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  background: radial-gradient(circle, #808080 10%, transparent 11%), radial-gradient(circle at bottom left, #808080 5%, transparent 6%), radial-gradient(circle at bottom right, #808080 5%, transparent 6%), radial-gradient(circle at top left, #808080 5%, transparent 6%), radial-gradient(circle at top right, #808080 5%, transparent 6%);
+  background-size: 2em 2em;
+  background-color: #868686;
+  opacity: 1;
+}
+
+/*Heading css*/
+.heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.heading .title {
+  width: 320px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+.heading .title h1 {
+  font-size: 30px;
+  text-transform: uppercase;
+}
+.heading .title .green-circle {
+  width: 60px;
+  height: 60px;
+  background-color: #3cc88d;
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Add Item css*/
+.inputs-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.inputs-wrapper button {
+  border-radius: 7px;
+  border: none;
+  background-color: #4ab2de;
+  width: 80px;
+  padding: 5px 0;
+}
+.inputs-wrapper .input {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  margin-bottom: 10px;
+}
+.inputs-wrapper .input label {
+  color: white;
+  margin-bottom: 5px;
+}
+.inputs-wrapper .input input,
+.inputs-wrapper .input select {
+  border-radius: 7px;
+  border: none;
+}
+.inputs-wrapper:after {
+  content: "";
+  margin: 10px 0;
+  width: 85%;
+  border-bottom: 1px solid black;
+  bottom: 0;
+}
+
+/*# sourceMappingURL=app.css.map */

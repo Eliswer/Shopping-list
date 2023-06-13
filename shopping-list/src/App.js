@@ -4,7 +4,7 @@ import Heading from "./components/Heading";
 import ItemList from "./components/ItemList";
 import Total from "./components/Total";
 
-import "./app.scss";
+import "./css/app.css";
 
 function App() {
   return (
