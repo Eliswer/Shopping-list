@@ -25,8 +25,19 @@ html {
   opacity: 1;
 }
 
-/*Heading css*/
+.arrow {
+  position: absolute;
+  top: 80px;
+  left: 25px;
+  height: 30px;
+  width: 30px;
+}
 
+.rotated {
+  transform: rotate(180deg);
+}
+
+/*Heading css*/
 .heading {
   display: flex;
   align-items: center;
@@ -62,6 +73,8 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all 1s;
+  overflow: hidden;
 
   button {
     border-radius: 7px;
@@ -74,7 +87,7 @@ html {
   .input {
     display: flex;
     flex-direction: column;
-    width: 40%;
+    width: 50%;
     margin-bottom: 10px;
 
     label {

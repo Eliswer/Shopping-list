@@ -16,6 +16,18 @@ html {
   opacity: 1;
 }
 
+.arrow {
+  position: absolute;
+  top: 80px;
+  left: 25px;
+  height: 30px;
+  width: 30px;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
 /*Heading css*/
 .heading {
   display: flex;
@@ -50,6 +62,8 @@ html {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  transition: all 1s;
+  overflow: hidden;
 }
 .inputs-wrapper button {
   border-radius: 7px;
@@ -61,7 +75,7 @@ html {
 .inputs-wrapper .input {
   display: flex;
   flex-direction: column;
-  width: 40%;
+  width: 50%;
   margin-bottom: 10px;
 }
 .inputs-wrapper .input label {

@@ -1,7 +1,7 @@
-function AddItem() {
+function AddItem({ height }) {
   return (
     <div className="add-item">
-      <div className="inputs-wrapper">
+      <div className="inputs-wrapper" style={{ height: height + "px" }}>
         <div className="input">
           <label for="name">Item name</label>
           <input id="name" />
@@ -12,8 +12,8 @@ function AddItem() {
         </div>
         <div className="input">
           <label for="category">Category</label>
-          <select id="category">
-            <option>Select</option>
+          <select id="category" size="3">
+            <option value="select">Select</option>
             <option value="bakery-and-bread">Bakery and bread</option>
             <option value="meat-and-seafood">Meat and seafood</option>
             <option value="pasta-and-rice">Pasta and rice</option>
