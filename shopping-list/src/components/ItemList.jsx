@@ -24,82 +24,10 @@ function ItemList() {
         <p className="expenses">50$</p>
         <div className="buttons">
           <div className="button green">
-            <img src={check}></img>
+            <img src={check} alt="check mark icon"></img>
           </div>
           <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
-          </div>
-        </div>
-      </div>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check}></img>
-          </div>
-          <div className="button blue">
-            <img src={pen}></img>
+            <img src={pen} alt="pencil icon"></img>
           </div>
         </div>
       </div>

@@ -1,4 +1,18 @@
+import { useDispatch } from "react-redux";
+import { newItemsActions } from "./store/newItems";
+import { useSelector } from "react-redux";
+
 function AddItem({ height }) {
+  const dispatch = useDispatch();
+
+  const allItems = useSelector((state) => state.newItems.itemsArray);
+
+  const handleChange = (e) => {
+    dispatch(newItemsActions.addNewItem(e.target.value));
+
+    console.log(allItems);
+  };
+
   return (
     <div className="add-item">
       <div className="inputs-wrapper" style={{ height: height + "px" }}>
@@ -12,7 +26,7 @@ function AddItem({ height }) {
         </div>
         <div className="input">
           <label htmlFor="category">Category</label>
-          <select id="category" size="3">
+          <select id="category" size="3" onChange={handleChange}>
             <option value="bakery-and-bread">Bakery and bread</option>
             <option value="meat-and-seafood">Meat and seafood</option>
             <option value="pasta-and-rice">Pasta and rice</option>

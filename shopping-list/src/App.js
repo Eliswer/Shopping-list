@@ -28,6 +28,7 @@ function App() {
       <div className="top">
         <img
           src={arrow}
+          alt="arrow up/down"
           className={`arrow ${rotation}`}
           onClick={handleShowMenu}
         />

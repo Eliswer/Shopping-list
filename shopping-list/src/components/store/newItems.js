@@ -2,10 +2,17 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const newItemsSlice = createSlice({
   name: "newItems",
-  initialState: {},
-  reducers: {},
+  initialState: {
+    itemsArray: [],
+  },
+  reducers: {
+    addNewItem(state, action) {
+      const newItem = { value: action.payload };
+      state.itemsArray.push(newItem);
+    },
+  },
 });
 
-export const newItems = newItemsSlice.actions;
+export const newItemsActions = newItemsSlice.actions;
 
 export default newItemsSlice;
