@@ -27,8 +27,8 @@ html {
 
 .arrow {
   position: absolute;
-  top: 82px;
-  left: 25px;
+  top: 73px;
+  left: 50%;
   height: 30px;
   width: 30px;
   cursor: pointer;
@@ -83,6 +83,11 @@ html {
     background-color: $blue;
     width: 80px;
     padding: 5px 0;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: #5b90a6;
+    }
   }
 
   .input {

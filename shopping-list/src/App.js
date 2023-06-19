@@ -24,7 +24,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <div className="top">
         <img
           src={arrow}

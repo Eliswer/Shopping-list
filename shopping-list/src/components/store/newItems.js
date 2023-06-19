@@ -7,8 +7,13 @@ const newItemsSlice = createSlice({
   },
   reducers: {
     addNewItem(state, action) {
-      const newItem = { value: action.payload };
-      state.itemsArray.push(newItem);
+      const newItem = {
+        itemName: action.payload.itemName,
+        price: action.payload.price,
+        category: action.payload.category,
+      };
+      state.itemsArray = [...state.itemsArray, newItem];
+      console.log(state.itemsArray);
     },
   },
 });

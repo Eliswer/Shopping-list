@@ -1,16 +1,33 @@
 import { useDispatch } from "react-redux";
 import { newItemsActions } from "./store/newItems";
-import { useSelector } from "react-redux";
+import { useState } from "react";
 
 function AddItem({ height }) {
+  const [price, setPrice] = useState("");
+  const [itemName, setItemName] = useState("");
+  const [category, setCategory] = useState("");
+  let disabled = true;
+
   const dispatch = useDispatch();
 
-  const allItems = useSelector((state) => state.newItems.itemsArray);
+  if (price === "" || category === "" || itemName === "") {
+    disabled = true;
+  } else {
+    disabled = false;
+  }
 
-  const handleChange = (e) => {
-    dispatch(newItemsActions.addNewItem(e.target.value));
+  const addItemOnClick = () => {
+    dispatch(
+      newItemsActions.addNewItem({
+        category: category,
+        itemName: itemName,
+        price: price,
+      })
+    );
 
-    console.log(allItems);
+    setPrice("");
+    setCategory("");
+    setItemName("");
   };
 
   return (
@@ -18,15 +35,34 @@ function AddItem({ height }) {
       <div className="inputs-wrapper" style={{ height: height + "px" }}>
         <div className="input">
           <label htmlFor="name">Item name</label>
-          <input id="name" />
+          <input
+            value={itemName}
+            id="name"
+            onChange={(e) => {
+              setItemName(e.target.value);
+            }}
+          />
         </div>
         <div className="input">
           <label htmlFor="price">Price</label>
-          <input id="price" />
+          <input
+            value={price}
+            id="price"
+            onChange={(e) => {
+              setPrice(e.target.value);
+            }}
+          />
         </div>
         <div className="input">
           <label htmlFor="category">Category</label>
-          <select id="category" size="3" onChange={handleChange}>
+          <select
+            value={category}
+            id="category"
+            size="3"
+            onChange={(e) => {
+              setCategory(e.target.value);
+            }}
+          >
             <option value="bakery-and-bread">Bakery and bread</option>
             <option value="meat-and-seafood">Meat and seafood</option>
             <option value="pasta-and-rice">Pasta and rice</option>
@@ -42,7 +78,9 @@ function AddItem({ height }) {
             <option value="alcoholic-drinks">Alcoholic drinks</option>
           </select>
         </div>
-        <button>Add Item</button>
+        <button onClick={addItemOnClick} disabled={disabled}>
+          Add Item
+        </button>
       </div>
     </div>
   );

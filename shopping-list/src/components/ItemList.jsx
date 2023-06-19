@@ -1,10 +1,27 @@
-import pen from "../img/pen.svg";
-import check from "../img/check.svg";
+import { useSelector } from "react-redux";
+import ItemCard from "./ItemCard";
 
 function ItemList() {
+  const allItems = useSelector((state) => state.itemsArray);
+  console.log(allItems);
+
+  let renderedItems;
+
+  if (allItems === undefined) {
+    renderedItems = <ItemCard price={0} itemName={"Add new items"} />;
+    console.log("undefined");
+  } else {
+    console.log("should be mapped");
+
+    renderedItems = allItems.map((item) => {
+      return <ItemCard price={item.price} itemName={item.itemName} />;
+    });
+  }
+
   return (
     <div className="item-list">
       <select id="category">
+        <option value="all">Show all</option>
         <option value="bakery-and-bread">Bakery and bread</option>
         <option value="meat-and-seafood">Meat and seafood</option>
         <option value="pasta-and-rice">Pasta and rice</option>
@@ -19,18 +36,7 @@ function ItemList() {
         <option value="non-alco-drinks">Non-alco drinks</option>
         <option value="alcoholic-drinks">Alcoholic drinks</option>
       </select>
-      <div className="item-wrapper">
-        <p className="item">Apples</p>
-        <p className="expenses">50$</p>
-        <div className="buttons">
-          <div className="button green">
-            <img src={check} alt="check mark icon"></img>
-          </div>
-          <div className="button blue">
-            <img src={pen} alt="pencil icon"></img>
-          </div>
-        </div>
-      </div>
+      {renderedItems}
     </div>
   );
 }
