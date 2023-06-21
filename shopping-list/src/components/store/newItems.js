@@ -15,6 +15,13 @@ const newItemsSlice = createSlice({
       state.itemsArray = [...state.itemsArray, newItem];
       console.log(state.itemsArray);
     },
+    removeItem(state, action) {
+      const itemCategory = action.payload;
+      state.itemsArray = state.itemsArray.filter(
+        (item) => item.itemName !== itemCategory
+      );
+      console.log(state.itemsArray);
+    },
   },
 });
 

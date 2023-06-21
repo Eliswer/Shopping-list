@@ -46,6 +46,7 @@ function AddItem({ height }) {
         <div className="input">
           <label htmlFor="price">Price</label>
           <input
+            type="number"
             value={price}
             id="price"
             onChange={(e) => {
@@ -63,6 +64,7 @@ function AddItem({ height }) {
               setCategory(e.target.value);
             }}
           >
+            <option>SCROLL TO SELECT</option>
             <option value="bakery-and-bread">Bakery and bread</option>
             <option value="meat-and-seafood">Meat and seafood</option>
             <option value="pasta-and-rice">Pasta and rice</option>

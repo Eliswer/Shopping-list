@@ -29,6 +29,11 @@ html {
   transform: rotate(180deg);
 }
 
+input:focus,
+select:focus {
+  outline: 1px solid #4ab2de;
+}
+
 /*Heading css*/
 .heading {
   display: flex;
@@ -89,7 +94,7 @@ html {
 }
 .inputs-wrapper .input input,
 .inputs-wrapper .input select {
-  border-radius: 7px;
+  border-radius: 5px;
   border: none;
   cursor: pointer;
 }
@@ -126,7 +131,6 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 70px;
 }
 .item-list .item-wrapper .button {
   width: 30px;
@@ -140,16 +144,18 @@ html {
 .item-list .item-wrapper .button.green {
   background-color: #3cc88d;
 }
-.item-list .item-wrapper .button.blue {
-  background-color: #4ab2de;
-}
 .item-list .item-wrapper .button img {
   height: 15px;
 }
 .item-list select {
   background: transparent;
-  border: none;
-  margin-bottom: 10px;
+  border-bottom: 1px solid black;
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  margin-bottom: 20px;
+  font-size: 18px;
+  border-radius: 5px;
 }
 
 /*Total*/
@@ -161,6 +167,7 @@ html {
   justify-content: space-around;
   margin-bottom: 20px;
   height: 60px;
+  font-size: 18px;
 }
 .total p {
   margin: 0;

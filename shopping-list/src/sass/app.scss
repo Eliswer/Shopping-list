@@ -38,6 +38,11 @@ html {
   transform: rotate(180deg);
 }
 
+input:focus,
+select:focus {
+  outline: 1px solid $blue;
+}
+
 /*Heading css*/
 .heading {
   display: flex;
@@ -103,7 +108,7 @@ html {
 
     input,
     select {
-      border-radius: 7px;
+      border-radius: 5px;
       border: none;
       cursor: pointer;
     }
@@ -144,7 +149,6 @@ html {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      width: 70px;
     }
 
     .button {
@@ -160,10 +164,6 @@ html {
         background-color: $green;
       }
 
-      &.blue {
-        background-color: $blue;
-      }
-
       img {
         height: 15px;
       }
@@ -172,8 +172,13 @@ html {
 
   select {
     background: transparent;
-    border: none;
-    margin-bottom: 10px;
+    border-bottom: 1px solid black;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-radius: 5px;
   }
 }
 
@@ -186,6 +191,7 @@ html {
   justify-content: space-around;
   margin-bottom: 20px;
   height: 60px;
+  font-size: 18px;
 
   p {
     margin: 0;
