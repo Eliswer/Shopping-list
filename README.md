@@ -1,4 +1,4 @@
-# Shopping-list
+# Shopping list
 Shopping list to keep track of your items in your basket
 
 # Created with
