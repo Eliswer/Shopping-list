@@ -1,20 +1,15 @@
 import { useDispatch } from "react-redux";
 import { newItemsActions } from "./store/newItems";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function AddItem({ height }) {
   const [price, setPrice] = useState("");
   const [itemName, setItemName] = useState("");
   const [category, setCategory] = useState("");
-  let disabled = true;
+  const [disabledBtn, setDisabledBtn] = useState(true);
+  const [disabledFirstOption, setDisabledFirstOption] = useState(false);
 
   const dispatch = useDispatch();
-
-  if (price === "" || category === "" || itemName === "") {
-    disabled = true;
-  } else {
-    disabled = false;
-  }
 
   const addItemOnClick = () => {
     dispatch(
@@ -26,9 +21,16 @@ function AddItem({ height }) {
     );
 
     setPrice("");
-    setCategory("");
     setItemName("");
   };
+
+  useEffect(() => {
+    if (price === "" || category === "" || itemName === "") {
+      setDisabledBtn(true);
+    } else {
+      setDisabledBtn(false);
+    }
+}, [price, itemName, category, disabledFirstOption]);
 
   return (
     <div className="add-item">
@@ -57,14 +59,16 @@ function AddItem({ height }) {
         <div className="input">
           <label htmlFor="category">Category</label>
           <select
+            menuIsOpen={true}
             value={category}
             id="category"
             size="3"
             onChange={(e) => {
               setCategory(e.target.value);
+              setDisabledFirstOption(true);
             }}
           >
-            <option>SCROLL TO SELECT</option>
+            <option disabled={disabledFirstOption}>SCROLL TO SELECT</option>
             <option value="bakery-and-bread">Bakery and bread</option>
             <option value="meat-and-seafood">Meat and seafood</option>
             <option value="pasta-and-rice">Pasta and rice</option>
@@ -80,7 +84,7 @@ function AddItem({ height }) {
             <option value="alcoholic-drinks">Alcoholic drinks</option>
           </select>
         </div>
-        <button onClick={addItemOnClick} disabled={disabled}>
+        <button onClick={addItemOnClick} disabled={disabledBtn}>
           Add Item
         </button>
       </div>
