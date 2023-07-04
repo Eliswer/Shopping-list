@@ -51,6 +51,7 @@ select:focus {
 .heading .title h1 {
   font-size: 30px;
   text-transform: uppercase;
+  color: #f5deb3;
 }
 .heading .title .green-circle {
   width: 60px;
@@ -75,12 +76,14 @@ select:focus {
   border-radius: 7px;
   border: none;
   background-color: #4ab2de;
-  width: 80px;
-  padding: 5px 0;
+  padding: 5px 15px;
   cursor: pointer;
+  color: #fff;
+  margin: 25px;
 }
 .inputs-wrapper button:disabled {
   background-color: #5b90a6;
+  cursor: not-allowed;
 }
 .inputs-wrapper .input {
   display: flex;
@@ -92,11 +95,18 @@ select:focus {
   color: white;
   margin-bottom: 5px;
 }
-.inputs-wrapper .input input,
+.inputs-wrapper .input input {
+  border-radius: 5px;
+  border: none;
+  cursor: text;
+  padding: 15px;
+}
 .inputs-wrapper .input select {
   border-radius: 5px;
   border: none;
   cursor: pointer;
+  padding: 15px;
+  height: 150px;
 }
 
 /*Item list css*/
@@ -111,7 +121,8 @@ select:focus {
   content: "";
   margin: 10px 0;
   width: 85%;
-  border-top: 1px solid black;
+  border-top: 1px solid #f5deb3;
+  opacity: 0.5;
   bottom: 0;
 }
 .item-list .item-wrapper {
@@ -125,6 +136,8 @@ select:focus {
   height: 40px;
   padding: 0 20px;
   border-radius: 7px;
+  margin: 25px;
+  padding: 15px;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
 .item-list .item-wrapper .buttons {
@@ -155,7 +168,9 @@ select:focus {
   border-left: none;
   margin-bottom: 20px;
   font-size: 18px;
-  border-radius: 5px;
+  margin: 20px 25px 25px 25px;
+  padding: 15px;
+  cursor: pointer;
 }
 
 /*Total*/
